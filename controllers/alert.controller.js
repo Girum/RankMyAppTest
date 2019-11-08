@@ -53,7 +53,8 @@ exports.test = async function (req, res) {
     try{
     const response = await axios.get(url);
     var itemsFound = response.data.findItemsByKeywordsResponse[0].searchResult[0].item;
-    var count = 0;
+    console.log(itemsFound);
+    /*var count = 0;
     itemsFound.forEach(items =>{
         //console.log("Item " + String(++count) + ":");
         //console.log(items);
@@ -66,7 +67,7 @@ exports.test = async function (req, res) {
             console.log(data);
             console.log("Email sent!");
         }
-    });
+    });*/
     
     } catch (error){
         console.log(error);
@@ -103,11 +104,24 @@ exports.createAlert = function (req,res) {
     
 };
 
-exports.getAlerts = function (req, res) {
-    Alert.find({email: req.query.email}, function (err, alerts){
+exports.getAlerts = async function (req, res) {
+
+    await Alert.find({email: req.query.email}, function (err, alerts){
         if(err){
             console.log(err);
-        } else if(Array.isArray(alerts)){
+        } else if(Array.isArray(alerts) && [].length){
+            res.send({ status: "Alerts not found!"});
+        } else {
+            res.send(alerts);
+        }
+    });
+};
+
+exports.getAlertsByTime = function (req, res) {
+    Alert.find({updateTime: req.query.updateTime}, function (err, alerts){
+        if(err){
+            console.log(err);
+        } else if(Array.isArray(alerts) && [].length){
             res.send({ status: "Alerts not found!"});
         } else {
             res.send(alerts);
