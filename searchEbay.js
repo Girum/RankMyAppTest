@@ -16,9 +16,7 @@ searchEbay = async function (keywords) {
     });
   
     var sendKeywords = auxKeywords.substring(0, auxKeywords.length -3);
-  
-    console.log("Keywords: " + sendKeywords);
-  
+    
     var url = "http://svcs.ebay.com/services/search/FindingService/v1";
     url += "?OPERATION-NAME="+OPERATION_NAME;
     url += "&SERVICE-VERSION=1.0.0";

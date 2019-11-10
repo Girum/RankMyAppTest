@@ -1,12 +1,9 @@
 mailOptions = function (to, data) {
 
-    /*console.log(`Email will be sent to ${to}`);
-    console.log(data);
-    console.log("\n");*/
     var itemsAcc="";
     data.forEach(item => {
         itemsAcc = itemsAcc.concat(item);
-        itemsAcc = itemsAcc.concat('\n');
+        itemsAcc = itemsAcc.concat('\n\n');
     });
     let mailOptions = {
         from: 'giotestemail16@gmail.com',
