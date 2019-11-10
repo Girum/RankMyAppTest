@@ -21,13 +21,13 @@ There are 7 controllers in the application, as it follows:
 To sending the requests, in the command line (using **curl**).
 Examples:
 
-- **getAlerts**: curl -v http://localhost/alert/get ;
-- **getAlertsByEmail**: curl -v http://localhost/alert/get/email?email=**someemail@email.com** ;
-- **getAlertsByTime**: curl -v http://localhost/alert/get/uptime?updateTime=2MIN
-- **createAlert**: curl -d '{"searchPhrase":"Harry Potter Toy","email":"someemail@email.com","updateTime":"30MIN"}' -H 'Content-Type: application/json' http://localhost/alert/create
-- **updateAlertSearchPhrase**: curl -d '{"searchPhrase":"Harry Potter Toy","email":"someemail@email.com","updatedSearchPhrase":"Harry Potter Toy Hermione"}' -H 'Content-Type: application/json' -X PUT http://localhost/alert/update
-- **updateAlertTime**: curl -d '{"searchPhrase":"Harry Potter Toy Hermione","email":"someemail@email.com","newTime":"10MIN"}' -H 'Content-Type: application/json' -X PUT http://localhost/alert/update/time
-- **deleteAlert**: curl -d '{"searchPhrase":"Harry Potter Toy Hermione","email":"someemail@email.com"}' -H 'Content-Type: application/json' -X DELETE http://localhost/alert/delete
+- **getAlerts**: curl -v http://localhost:3040/alert/get
+- **getAlertsByEmail**: curl -v http://localhost:3040/alert/get/email?email=someemail@email.com
+- **getAlertsByTime**: curl -v http://localhost:3040/alert/get/uptime?updateTime=2MIN
+- **createAlert**: curl -d '{"searchPhrase":"Harry Potter Toy","email":"someemail@email.com","updateTime":"30MIN"}' -H 'Content-Type: application/json' http://localhost:3040/alert/create
+- **updateAlertSearchPhrase**: curl -d '{"searchPhrase":"Harry Potter Toy","email":"someemail@email.com","updatedSearchPhrase":"Harry Potter Toy Hermione"}' -H 'Content-Type: application/json' -X PUT http://localhost:3040/alert/update
+- **updateAlertTime**: curl -d '{"searchPhrase":"Harry Potter Toy Hermione","email":"someemail@email.com","newTime":"10MIN"}' -H 'Content-Type: application/json' -X PUT http://localhost:3040/alert/update/time
+- **deleteAlert**: curl -d '{"searchPhrase":"Harry Potter Toy Hermione","email":"someemail@email.com"}' -H 'Content-Type: application/json' -X DELETE http://localhost:3040/alert/delete
 
 ## Running the application
 
